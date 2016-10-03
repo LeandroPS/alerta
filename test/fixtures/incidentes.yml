@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lat: MyString
+  long: MyString
+  tipo: MyString
+  data: 2016-09-26
+  hora: 2016-09-26
+  descricao: MyString
+
+two:
+  lat: MyString
+  long: MyString
+  tipo: MyString
+  data: 2016-09-26
+  hora: 2016-09-26
+  descricao: MyString

@@ -1,0 +1,67 @@
+<%= form_for(incidente) do |f| %>
+  <% if incidente.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(incidente.errors.count, "error") %> prohibited this incidente from being saved:</h2>
+
+      <ul>
+      <% incidente.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :lat %>
+    <%= f.text_field :lat %>
+  </div>
+
+  <div class="field">
+    <%= f.label :long %>
+    <%= f.text_field :long %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tipo %>
+  
+		<%= f.radio_button :tipo, 'assalto', :checked => true %> Assalto
+    <%= f.radio_button :tipo, 'acidente' %> Acidente
+		
+  </div>
+
+  <div class="field">
+    <%= f.label :data %>
+    <%= f.text_field :data, class: 'datepicker' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hora %>
+    <%= f.date_select :hora %>
+  </div>
+
+  <div class="field">
+    <%= f.label :descricao %>
+    <%= f.text_field :descricao %>
+  </div>
+
+  <div>
+    <%= f.label :foto %>
+	<%= image_tag @incidente.foto_url, class: 'foto' if @incidente.foto? %>
+	<%= f.file_field :foto, label: 'Foto' , input_html: {accept: ('application/jpg') } %>
+	<br/>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+	
+
+
+<% end %>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.datepicker').datepicker({format: 'dd-mm-yyyy'});
+	});
+
+</script>

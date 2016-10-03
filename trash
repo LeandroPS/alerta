@@ -1,0 +1,5 @@
+rails generate scaffold usuarios nome email senha
+
+rails generate scaffold incidente lat long tipo data:date hora:date descricao
+
+rails generate uploader FotoIncidente

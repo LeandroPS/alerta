@@ -1,0 +1,8 @@
+<%= form_tag(incidentes_path, method: "get") do %>
+	<%= label_tag(:ptipo, "Tipo:") %>
+	<%= select_tag :ptipo,
+		options_for_select([['Assalto','assalto'],['Acidente','acidente']],selected:@ptipo)
+%>
+ <br/>
+ <%= submit_tag 'Filtrar' %>
+<% end %>
